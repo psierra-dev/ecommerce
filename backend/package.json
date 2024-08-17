@@ -2,7 +2,8 @@
   "name": "backend-ecommerce",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "type": "module",
+  "main": "./src/start",
   "scripts": {
     "build": "tsc",
     "start": "node -r tsconfig-paths/register -r ts-node/register ./build/start.js",

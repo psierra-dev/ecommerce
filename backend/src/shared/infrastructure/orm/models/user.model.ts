@@ -1,5 +1,6 @@
 'use strict';
-import {Table, Column, Model, DataType, PrimaryKey, AllowNull, Unique, CreatedAt, UpdatedAt, Default} from 'sequelize-typescript';
+import {Table, Column, Model, DataType, PrimaryKey, AllowNull, Unique, CreatedAt, UpdatedAt, Default, HasMany} from 'sequelize-typescript';
+import Order from './order.model';
 
 @Table
 export default class User extends Model<User> {
@@ -31,6 +32,9 @@ export default class User extends Model<User> {
   @AllowNull(false)
   @Column(DataType.STRING)
   password: string;
+
+  @HasMany(() => Order)
+  orders: Order[];
 
   @CreatedAt
   createdAt: Date;

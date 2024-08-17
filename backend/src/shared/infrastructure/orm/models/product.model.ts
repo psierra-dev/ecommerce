@@ -1,6 +1,7 @@
 'use strict';
-import {Table, Column, Model, DataType, AutoIncrement, PrimaryKey, AllowNull, Unique, CreatedAt, UpdatedAt, ForeignKey, BelongsTo} from 'sequelize-typescript';
+import {Table, Column, Model, DataType, AutoIncrement, PrimaryKey, AllowNull, Unique, CreatedAt, UpdatedAt, ForeignKey, BelongsTo, HasMany} from 'sequelize-typescript';
 import Category from './category.model';
+import OrderItem from './orderitem.model';
 
 @Table
 export default class Product extends Model<Product> {
@@ -41,6 +42,9 @@ export default class Product extends Model<Product> {
 
   @BelongsTo(() => Category)
   category: Category;
+
+  @HasMany(() => OrderItem)
+  order_items: OrderItem[];
 
   @CreatedAt
   createdAt: Date;
