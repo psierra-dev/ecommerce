@@ -1,7 +1,5 @@
 import config from "../../../../config/index.js";
 
-const DATABASE_URL = process.env.DB_URL;
-
 export default {
   development: {
     //url: DATABASE_URL,
@@ -16,7 +14,7 @@ export default {
     dialect: "postgres",
   },
   production: {
-    url: DATABASE_URL,
+    url: config.db_url,
     dialect: "postgres",
     dialectOptions: {
       ssl: {

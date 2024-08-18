@@ -4,6 +4,8 @@ import {Sequelize}  from "sequelize-typescript";
 const env = process.env.NODE_ENV || "development";
 import config  from "../config/config.js";
 
+console.log(config[env], 'config', env, 'env');
+
 let sequelize: Sequelize;
 
 
