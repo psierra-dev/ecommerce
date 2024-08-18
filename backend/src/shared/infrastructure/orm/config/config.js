@@ -10,7 +10,7 @@ export default {
     password: config.db_password,
   },
   test: {
-    url: DATABASE_URL,
+    url: config.db_url,
     dialect: "postgres",
   },
   production: {
